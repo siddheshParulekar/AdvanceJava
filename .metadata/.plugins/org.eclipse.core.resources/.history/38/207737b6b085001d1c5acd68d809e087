@@ -1,0 +1,71 @@
+package java8F;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class StreamApi {
+	
+	public static void main(String[] args) {
+		
+		List<Integer> l1 = new ArrayList<>();
+		l1.add(12);
+		l1.add(111);
+		l1.add(13);
+		l1.add(122);
+		l1.add(56);
+		l1.add(87);
+		
+		for (Integer i : l1) {
+			System.out.println(i);
+			
+		}
+		
+		
+		Stream<Integer> stream = l1.stream();
+		
+		//filter something from set of objects
+		List<Integer>evenList =stream.filter(i-> i%2!=0).collect(Collectors.toList());
+//		Stream<Integer> stream1 = l1.stream();
+//		System.out.println(stream1.anyMatch(i -> i%2 != 0));
+//		
+		System.out.println("odd numbers" + evenList);
+	List<Integer> oddlist	=evenList.stream().map(i-> i*2).collect(Collectors.toList());
+	
+	System.out.println(oddlist);
+//	oddlist.stream().map(i -> i)
+	int sum=oddlist.stream().reduce(0, Integer::sum);
+	
+	//oddlist.stream().map(i->i.sum(i, i+1)).forEach(t->System.out.println("sum of all elements of list"+t));
+//		
+//		
+//		
+//		List<String> nameStrings = new ArrayList<>();
+//		nameStrings.add("Siddhesh");
+//		nameStrings.add("Vimlesh");
+//		nameStrings.add("umesh");
+//		nameStrings.add("saurabh");
+//		nameStrings.add("adii");
+//		nameStrings.add("Sammer");
+//		
+//		
+//		
+//		List<String> newStrings = nameStrings.stream().filter(i -> i.toLowerCase().startsWith("s")).collect(Collectors.toList());
+//		
+//		System.out.println(newStrings);
+//		Optional<String> optional  = nameStrings.stream().filter(i -> i.toLowerCase().startsWith("a")).findFirst();
+//		System.out.println(optional);
+//		
+//		List<Integer> ls4 = Arrays.asList(12,45,44,32,55,64);
+//		List<Integer> ls5 = new ArrayList<>();
+//		//do operation on every object of list and store it on another list
+// 	ls5=ls4.stream().map(i->i*2).collect(Collectors.toList());
+//		System.out.println(ls5);
+//		
+//		
+	}
+
+}

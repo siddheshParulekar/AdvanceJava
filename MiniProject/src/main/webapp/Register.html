@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+<form action="UserServlet" method="post">
+    <div class="hero">
+        <div class="form">
+            <div class="button-box">
+                <div id="btn"></div>
+                 <button type="button" class="toggle-btn" onclick="LogIn()">log In</button>
+                 <button type="button" class="toggle-btn" onclick="Register()">Register</button>
+                
+            </div>
+            
+            <form  id="login" class="input-group">
+                <input type="text"  id="uname" minlength="3" maxlength="10" onblur="validateLogin()"  class="input-field" placeholder="user id " required>
+                <input type="text" class="input-field" placeholder="password "  id="pass"   required>
+                <input type="checkbox" class="check-box"  ><span>Remeber password</span>
+                <!-- <input type="button" class="submit-btn" value="Login" onclick="validateHome()"> -->
+                 <button  type="submit" class="submit-btn" onclick="validateHome()"  > Login</button>     </form>
+            <form id="regeister" class="input-group">
+                <input type="text" id="uname2" minlength="3" maxlength="10"  onblur="validateRegister2()" class="input-field" placeholder="user id " required>
+                <input type="email" class="input-field" placeholder="Email id "  id="mail"   onblur="validateRegister1()" required>
+                <input type="text" class="input-field" placeholder=" Enter password "  id="pass2"   required>
+                <input type="checkbox" class="check-box"><span>Accept the terms and condition</span>
+               <!--  <input type="button" class="submit-btn" value="Regeister" onclick="validateHome()"> -->
+                <button type="submit" class="submit-btn" onclick="validate()"  > Register</button> 
+            </form>
+        </div>
+        
+    </div>
+    </form>
+    <nav id="topnav">
+        <ul >
+            <li><a href="index.html">Home</a></li>
+            <li> <a href="aboutUs.html">About Us</a> </li>
+            <li><a href="Concept.html">Concept</a></li>
+            <li> <a href="Regeister.html"> Login page</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        var lg = document.getElementById("login");
+        var rg = document.getElementById("regeister");    
+         var bt = document.getElementById("btn");
+         var emailNode =document.getElementById("mail");
+         var unameNode = document.getElementById("uname");
+         var unameNode1 = document.getElementById("uname2");
+ 
+        function Register(){
+
+            lg.style.left="-400px";
+            rg.style.left="50px";
+            bt.style.left="110px";
+        }
+        function LogIn(){
+
+            lg.style.left="50px";
+            rg.style.left="450px";
+            bt.style.left="0";
+        }
+        
+        
+        function validateRegister1(){
+        	let email=emailNode.value;
+            
+            if(email===''){
+                
+                 emailNode.style.border="2px solid red";
+                 return false;
+               }
+           else if(!email.includes('@') || email.endsWith('@')){
+                
+                emailNode.style.border="2px solid red";
+                return false;
+           }
+           else{
+              emailNode.style.border="2px solid green";
+              return true;
+         
+           }
+        	
+        }
+        function validateRegister2(){
+        	let uName=unameNode1.value;
+        	if(uName===''){
+                
+                unameNode.style.border="2px solid red";
+                return false;
+              }
+              else if(uname.length<3 || uname.length>10){
+                
+               unameNode.style.border="2px solid red";
+               return false;
+              } 
+             else{
+               unameNode.style.border="2px solid green";
+               return true;
+              }
+        }
+
+       function validateLogin(){
+          let uName=unameNode.value;
+           
+           if(uName===''){
+               
+              unameNode.style.border="2px solid red";
+              return false;
+            }
+            else if(uname.length<3 || uname.length>10){
+              
+             unameNode.style.border="2px solid red";
+             return false;
+            } 
+           else{
+             unameNode.style.border="2px solid green";
+            // window.location = "index.html";
+             return true;
+            }
+    	   
+       }
+       
+       function validate(){
+           let v1 = validateRegister1();
+           let v2 = validateRegister2();
+           //return (v1 && v2);
+           if(v1 && v2){
+        	   lg.style.left="50px";
+               rg.style.left="450px";
+               bt.style.left="0";
+           }
+           else{
+        	   alert ("failed");
+           }
+        } 
+       
+       
+        
+        function validateHome(){
+
+        	
+         validateLogin();
+        	if(validateLogin() == true){
+        		//window.location = "index.html";
+        		alert("Success");
+        	}
+        	else{
+        		alert("failed");
+        	}
+          
+        }       
+    </script>
+</body>
+</html>

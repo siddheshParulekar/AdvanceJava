@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;sorting.model&apos; to &apos;Model&apos;&#x0D;&#x0A;- Original project: &apos;sorting&apos;&#x0D;&#x0A;- Original element: &apos;sorting.model&apos;&#x0D;&#x0A;- Renamed element: &apos;sorting.Model&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;model&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;sorting{model.java[model" matchStrategy="1" name="Model" qualified="false" references="true" similarDeclarations="false" stamp="1665817822096" textual="false" version="1.0"/>
+</session>

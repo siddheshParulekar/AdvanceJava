@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiffinLo</title>
+    <link rel="stylesheet" href="MyStyle//Homestyle.css">
+</head>
+<body >
+
+   <div>
+      <nav id="topnav">
+         <ul >
+            <li><a href="index.html">Home</a></li>
+            <li> <a href="aboutUs.html">About Us</a> </li>
+            <li><a href="Concept.html">Concept</a></li>
+            <li> <a href="Regeister.html"> Login page</a></li>
+         </ul>
+       </nav>
+   </div>
+   <div id="Main">
+    
+    <div  id="slides">
+
+        <img src="Media/slide1.png" alt="Slides"  id="img1" height="300px"  width="100%">
+
+    </div>
+
+    <!-- <div id="Toggle">
+        <div class="Option">
+            <button id="bt1">Lunch</button>
+            <button id="bt2">Dinner</button>
+        </div>
+    </div> -->
+
+
+    <div id="ele-one" class="sections">
+        <figure id="tiffin1" class="services">
+            <img src="Media/tiffin1.jpg" alt="tiffin" id="tfn1" class="logos" >
+        </figure>
+
+        <p class="Names"><b>ANAPURNA TIFFIN SERVICE</b></p>
+        <p><i>Price:$100</i></p>
+        <p class="Desp" style="color:red;"><i>1 chappati + 2 sabji + rice + papad + rayta + sweats</i> </p>
+        <button class="AddTo">Add To Cart</button>
+    </div>
+    <br>
+    <div id="ele-one" class="sections">
+        <figure id="tiffin1" class="services">
+            <img src="Media/tiffin2.jpg" alt="tiffin" id="tfn1" class="logos" >
+        </figure>
+
+        <p class="Names"><b>Ganesh TIFFIN SERVICE</b></p>
+        <p><i>Price:$150</i></p>
+        <p class="Desp" style="color:red;"><i>1 chappati + 2 sabji + rice + papad + rayta + sweats</i> </p>
+        <button class="AddTo">Add To Cart</button>
+    </div>
+    <br>
+    <div id="ele-one" class="sections">
+        <figure id="tiffin1" class="services">
+            <img src="Media/tiffin3.jpg" alt="tiffin" id="tfn1" class="logos" >
+        </figure>
+
+        <p class="Names"><b>Balanced diet</b></p>
+        <p><i>Price:$200</i></p>
+        <p class="Desp" style="color:red;"><i>1 chappati + 2 sabji + rice + papad + rayta + sweats</i> </p>
+        <button class="AddTo">Add To Cart</button>
+    </div>
+    <br>
+    <div id="ele-one" class="sections">
+        <figure id="tiffin1" class="services">
+            <img src="Media/tiffin4.jpg" alt="tiffin" id="tfn1" class="logos" >
+        </figure>
+
+        <p class="Names"><b>Om sai Tiffin service</b></p>
+        <p><i>Price:$170</i></p>
+        <p class="Desp" style="color:red;"><i>1 chappati + 2 sabji + rice + papad + rayta + sweats</i> </p>
+        <button class="AddTo">Add To Cart</button>
+    </div>
+    <br>
+    <div id="ele-one" class="sections">
+        <figure id="tiffin1" class="services">
+            <img src="Media/tiffin5.jpg" alt="tiffin" id="tfn1" class="logos" >
+        </figure>
+
+        <p class="Names"><b>Gharcha Aaswaad</b></p>
+        <p><i>Price:$130</i></p>
+        <p class="Desp" style="color:red;"><i>1 chappati + 2 sabji + rice + papad + rayta + sweats</i> </p>
+        <button class="AddTo">Add To Cart</button>
+    </div>
+
+
+
+
+
+
+
+    
+       
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        var img = document.getElementById('img1');
+        var imgarr = ['Media/rotis.png','Media/salad_pasta.png','Media/hygienic.png','Media/salads.png','Media/slide1.png'];
+        var i = 0;
+        function slide(){
+            img.setAttribute('src',imgarr[i]);
+            i++;
+            if(i == imgarr.length){
+                i = 0;
+            }
+        }
+        setInterval('slide()',2000);   
+
+
+        $(document).ready(function(){
+              $(".AddTo").click(function(){
+                
+                alert("The Tiffin is added to the cart.");
+              });
+
+            
+        })
+    </script>
+</body>
+</html>

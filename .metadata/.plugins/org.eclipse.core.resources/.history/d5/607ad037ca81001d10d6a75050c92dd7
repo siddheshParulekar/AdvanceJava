@@ -1,0 +1,15 @@
+package java8F;
+interface functionalDemo{
+	boolean check(int a);
+}
+
+
+public class PredicatesDemo  {
+	
+	
+	public static void main(String[] args) {
+		functionalDemo f1 =(a) -> a>10?true:false;
+		System.out.println(f1.check(11));
+	}
+
+}
